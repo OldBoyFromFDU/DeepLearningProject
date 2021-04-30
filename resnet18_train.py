@@ -4,8 +4,16 @@ import os
 from resnet import resnet18
 import datetime
 
-config = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True))
-sess = tf.compat.v1.Session(config=config)
+
+
+
+
+config = tf.compat.v1.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.compat.v1.InteractiveSession(config=config)
+
+# config = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True))
+# sess = tf.compat.v1.Session(config=config)
 
 # devices = tf.config.experimental.list_physical_devices('GPU')
 # tf.config.experimental.set_memory_growth(devices[0], True)
